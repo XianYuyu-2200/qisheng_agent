@@ -1,40 +1,33 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <img src="https://assets.openhands.dev/logo-whitebackground.png" alt="OpenHands logo" width="340">
-  <h1 align="center" style="border-bottom: none">Agent Canvas</h1>
+  <img src="public/android-chrome-512x512.png" alt="启声 logo" width="140">
+  <h1 align="center" style="border-bottom: none">启声</h1>
   <p align="center">
     <strong>The self-hosted developer control center for coding agents and automations.</strong>
   </p>
   <p align="center">
-    Run OpenHands, Claude Code, Codex, Gemini, or any ACP-compatible agent across local, remote, and cloud backends.
+    Run 启声, Claude Code, Codex, Gemini, or any ACP-compatible agent across local, remote, and cloud backends.
   </p>
 </div>
 <div align="center">
-  <a href="https://github.com/OpenHands/incubator-program"><img src="https://img.shields.io/badge/status-beta-blue?style=for-the-badge" alt="Project status beta"></a>
-  <a href="https://github.com/OpenHands/OpenHands/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/OpenHands/OpenHands/ci.yml?branch=main&style=for-the-badge" alt="CI status"></a>
-  <a href="https://www.npmjs.com/package/@openhands/agent-canvas"><img src="https://img.shields.io/npm/v/%40openhands%2Fagent-canvas?style=for-the-badge&logo=npm" alt="npm version"></a>
-  <a href="https://docs.openhands.dev/openhands/usage/agent-canvas/backends"><img src="https://img.shields.io/badge/Documentation-000?logo=googledocs&logoColor=FFE165&style=for-the-badge" alt="Documentation"></a>
-  <a href="https://go.openhands.dev/slack"><img src="https://img.shields.io/badge/Slack-Join%20the%20community-611f69?logo=slack&logoColor=white&style=for-the-badge" alt="Join us on Slack"></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge" alt="License MIT"></a>
+  <a href="https://github.com/OpenHands/OpenHands"><img src="https://img.shields.io/badge/based%20on-OpenHands%20Agent%20Canvas-6b7280?style=for-the-badge" alt="Based on OpenHands Agent Canvas"></a>
 </div>
 <div align="center">
   <a href="#quickstart">Quickstart</a> |
   <a href="./docs/README.md">Docs</a> |
   <a href="./docs/SELF_HOSTING.md">Self-Hosting</a> |
   <a href="https://docs.openhands.dev/openhands/usage/agent-canvas/acp-agents">ACP Agents</a> |
-  <a href="https://docs.openhands.dev/openhands/usage/agent-canvas/prebuilt-automations">Automations</a> |
-  <a href="https://go.openhands.dev/slack">Slack</a>
+  <a href="https://docs.openhands.dev/openhands/usage/agent-canvas/prebuilt-automations">Automations</a>
 </div>
-<p align="center">
-  <img src="https://assets.openhands.dev/screenshot/automation-preview.png" alt="Agent Canvas automation preview" width="100%">
-</p>
 <hr>
 
 启声 turns your coding agents into a self-hosted, always-on engineering team. It's a developer control center for starting conversations and automating everyday tasks — like generating reports that publish to Slack or automatically decomposing GitHub issues into tasks.
 
 It runs locally on your machine by default, but can connect to multiple “agent backends”, e.g. running agents in Docker containers, on VMs, or within your company infrastructure. You can optionally choose to run agents on OpenHands Cloud or OpenHands Enterprise infrastructure.
 
-Agent Canvas runs the open source OpenHands agent out-of-the-box, but can use any third-party agent like Claude Code and Codex.
+启声 runs the open source OpenHands agent out-of-the-box, but can use any third-party agent like Claude Code and Codex.
 
 |                                                                                                                      |                                                                                                                                          |
 | -------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
@@ -43,21 +36,21 @@ Agent Canvas runs the open source OpenHands agent out-of-the-box, but can use an
 | [**Create automations**](https://docs.openhands.dev/openhands/usage/agent-canvas/prebuilt-automations)               | Create automations and workflows that integrate with Slack, GitHub, Linear, and more. Run on a schedule or in response to webhook events |
 | [**Integrate with the tools you use**](https://docs.openhands.dev/openhands/usage/agent-canvas/prebuilt-automations) | Connect your automations with third-party services like Slack, GitHub, Notion, and more to automate workflows                            |
 | [**Bring your own model**](https://docs.openhands.dev/openhands/usage/settings/llm-settings#llm-profiles)            | Use with any LLM                                                                                                                         |
-| [**Use with any agent**](https://docs.openhands.dev/openhands/usage/agent-canvas/acp-agents)                         | Use with OpenHands, Claude Code, Codex, Gemini, or any agent with Agent-Client Protocol (ACP).                                           |
+| [**Use with any agent**](https://docs.openhands.dev/openhands/usage/agent-canvas/acp-agents)                         | Use with 启声, Claude Code, Codex, Gemini, or any agent with Agent-Client Protocol (ACP).                                                |
 
-If you have questions or feedback, please open a GitHub issue or join the [#proj-agent-canvas channel in Slack](https://openhands.dev/joinslack).
+If you have questions or feedback, please open a GitHub issue.
 
 ## Quickstart
 
-You can install OpenHands to run agents on any machine: on your laptop, on a dedicated computer like a Mac Mini,
+You can install 启声 to run agents on any machine: on your laptop, on a dedicated computer like a Mac Mini,
 or on a server in the cloud.
 
-The most powerful way to run OpenHands is on a server in the cloud. This allows your agents to continue running
+The most powerful way to run 启声 is on a server in the cloud. This allows your agents to continue running
 even when your laptop is shut, and makes it easier to trigger your agents through third-party services
 like Slack, GitHub, and Datadog. See [SELF_HOSTING.md](docs/SELF_HOSTING.md) for details, especially with respect to security hardening.
 
 Notably, you can run the backend in _multiple different environments_, and switch between
-them from the same Agent Canvas frontend. E.g. you can share an Agent Server with your team for agents doing
+them from the same 启声 frontend. E.g. you can share an Agent Server with your team for agents doing
 code review and dependency updates, then have your personal agents running on your laptop.
 
 ### Option 1: Without a Sandbox
@@ -111,8 +104,8 @@ The agent will be able to access any project under `PROJECTS_PATH`.
 **Prerequisites**: Node.js 22.12.x or later, `npm`, `uv` (for running the agent server via `uvx`)
 
 ```sh
-git clone https://github.com/OpenHands/OpenHands.git
-cd OpenHands
+git clone https://github.com/XianYuyu-2200/qisheng_agent.git
+cd qisheng_agent
 npm install
 npm run dev
 ```
@@ -123,7 +116,7 @@ Access the UI at [http://localhost:8000](http://localhost:8000) for the npm/sour
 
 # Architecture
 
-Agent Canvas is powered by the [OpenHands Agent Server](https://github.com/OpenHands/software-agent-sdk/tree/main/openhands-agent-server/openhands/agent_server), a REST API for running multiple agents on a single machine. Each Agent Server runs on a single host/port; the Agent Canvas can connect to multiple Agent Servers and easily flip between them.
+启声 is powered by the [OpenHands Agent Server](https://github.com/OpenHands/software-agent-sdk/tree/main/openhands-agent-server/openhands/agent_server), a REST API for running multiple agents on a single machine. Each Agent Server runs on a single host/port; 启声 can connect to multiple Agent Servers and easily flip between them.
 
 You can run an Agent Server anywhere:
 
@@ -138,7 +131,7 @@ The Agent Server is often paired with an [Automation Server](https://github.com/
 
 ### Repository boundaries
 
-Agent Canvas is part of a multi-repository OpenHands system. Changes should go to the repository that owns the behavior:
+启声 is part of a multi-repository OpenHands system. Changes should go to the repository that owns the behavior:
 
 | Repository | Responsibility |
 |---|---|
@@ -147,7 +140,7 @@ Agent Canvas is part of a multi-repository OpenHands system. Changes should go t
 | [`OpenHands/typescript-client`](https://github.com/OpenHands/typescript-client) | Browser-compatible TypeScript client for the Agent Server API. |
 | [`OpenHands/automation`](https://github.com/OpenHands/automation) | Automation definitions, scheduling, webhooks, run history, and dispatching. |
 
-The Agent Server API is implemented by the SDK and consumed through the TypeScript client by Agent Canvas. The automation service decides when work runs and dispatches conversations to the Agent Server/SDK, which decides what runs. See [`AGENTS.md`](./AGENTS.md) for contributor-specific boundaries and the required custom code-review guide.
+The Agent Server API is implemented by the SDK and consumed through the TypeScript client by 启声. The automation service decides when work runs and dispatches conversations to the Agent Server/SDK, which decides what runs. See [`AGENTS.md`](./AGENTS.md) for contributor-specific boundaries and the required custom code-review guide.
 
 
 ## More documentation
