@@ -96,8 +96,13 @@ describe("color themes", () => {
       "#ffffff",
     );
 
+    // The alternates declare their tokens explicitly: tailwind.css's static
+    // :root baseline is the 启声 navy, so clearing the override would paint
+    // 启声-blue buttons on top of a palette that never opted into it.
     applyColorTheme("openhands-neutral");
 
-    expect(scopeRoot.style.getPropertyValue("--oh-color-primary")).toBe("");
+    expect(scopeRoot.style.getPropertyValue("--oh-color-primary")).toBe(
+      "#c9b974",
+    );
   });
 });

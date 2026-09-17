@@ -1,4 +1,5 @@
 export type ColorThemeKey =
+  | "qisheng"
   | "openhands-deepsea"
   | "openhands-neutral"
   | "openhands-neo";
@@ -105,7 +106,119 @@ const NEO_WHITE_BUTTON_TOKENS: Record<
   "--oh-warning": "#ffffff",
 };
 
+/**
+ * The pre-启声 OpenHands brand (gold). tailwind.css's static :root baseline is
+ * now the 启声 navy, so a theme that leaves these tokens unset would fall back
+ * to blue buttons sitting on an unrelated palette. The upstream alternates
+ * declare them explicitly to keep the exact look they had before.
+ */
+const LEGACY_GOLD_BRAND_TOKENS: Record<
+  (typeof COLOR_THEME_TOKEN_KEYS)[number],
+  string
+> = {
+  "--oh-color-primary": "#c9b974",
+  "--oh-accent": "#c9b974",
+  "--oh-warning": "#c9b974",
+};
+
+/**
+ * 启声 (Qisheng) — the house palette.
+ *
+ * Hue comes from the brand mark's gradient (#0F172A → #2563EB) so the chrome
+ * reads as the same navy the logo sits on. Every stop keeps the lightness of
+ * the corresponding neutral stop, so existing contrast relationships are
+ * preserved or improved rather than re-tuned blind:
+ *
+ *   foreground on base 16.30:1 (was 15.03:1)
+ *   muted on base       7.40:1 (was  6.08:1)
+ *   text-dim on base    4.88:1 (was  3.74:1)
+ *
+ * --cool-grey-950 is the app base (--oh-color-base) and is deliberately the
+ * dark stop of the logo gradient.
+ */
+const QISHENG_SCALE = {
+  "--cool-grey-50": "#F8FAFC",
+  "--cool-grey-100": "#F1F5F9",
+  "--cool-grey-200": "#E2E8F0",
+  "--cool-grey-300": "#C7D2E1",
+  "--cool-grey-400": "#9AA8BC",
+  "--cool-grey-500": "#77879E",
+  "--cool-grey-600": "#5A6A80",
+  "--cool-grey-700": "#44536A",
+  "--cool-grey-800": "#2E3A4F",
+  "--cool-grey-900": "#1C2638",
+  "--cool-grey-925": "#131C2E",
+  "--cool-grey-950": "#0F172A",
+  "--cool-grey-975": "#080D17",
+};
+
+// Same positional mapping as NEUTRAL_HEROUI: heroui stop 850 sits at the
+// --cool-grey-900 position and stop 900 at --cool-grey-925, so the numbers
+// below are heroui stops, not cool-grey steps.
+const QISHENG_HEROUI = {
+  "--heroui-background": "222.22 47.37% 11.18%",
+  "--heroui-background-foreground": "210 40% 98.04%",
+  "--heroui-foreground-50": "220 48.39% 6.08%",
+  "--heroui-foreground-100": "222.22 47.37% 11.18%",
+  "--heroui-foreground-200": "220 41.54% 12.75%",
+  "--heroui-foreground-300": "218.57 33.33% 16.47%",
+  "--heroui-foreground-400": "218.18 26.4% 24.51%",
+  "--heroui-foreground-500": "216.32 21.84% 34.12%",
+  "--heroui-foreground-600": "214.74 17.43% 42.75%",
+  "--heroui-foreground-700": "215.38 16.74% 54.31%",
+  "--heroui-foreground-800": "215.29 20.24% 67.06%",
+  "--heroui-foreground-900": "214.62 30.23% 83.14%",
+  "--heroui-foreground": "214.62 30.23% 83.14%",
+  "--heroui-content1": "220 41.54% 12.75%",
+  "--heroui-content1-foreground": "210 40% 96.08%",
+  "--heroui-content2": "218.57 33.33% 16.47%",
+  "--heroui-content2-foreground": "214.29 31.82% 91.37%",
+  "--heroui-content3": "218.18 26.4% 24.51%",
+  "--heroui-content3-foreground": "214.62 30.23% 83.14%",
+  "--heroui-content4": "216.32 21.84% 34.12%",
+  "--heroui-content4-foreground": "215.29 20.24% 67.06%",
+  "--heroui-default-50": "220 48.39% 6.08%",
+  "--heroui-default-100": "222.22 47.37% 11.18%",
+  "--heroui-default-200": "220 41.54% 12.75%",
+  "--heroui-default-300": "218.57 33.33% 16.47%",
+  "--heroui-default-400": "218.18 26.4% 24.51%",
+  "--heroui-default-500": "216.32 21.84% 34.12%",
+  "--heroui-default-600": "214.74 17.43% 42.75%",
+  "--heroui-default-700": "215.38 16.74% 54.31%",
+  "--heroui-default-800": "215.29 20.24% 67.06%",
+  "--heroui-default-900": "214.62 30.23% 83.14%",
+  "--heroui-default-foreground": "210 40% 98.04%",
+  "--heroui-default": "218.18 26.4% 24.51%",
+};
+
+/**
+ * 启声 brand tokens.
+ *
+ * The accent is #3B82F6 rather than the logo gradient's #2563EB on purpose:
+ * --oh-accent is used as body text in several places (links, drop indicators),
+ * and #2563EB only reaches 3.90:1 on the base — below the 4.5:1 body-text
+ * floor. #3B82F6 clears it from both sides (4.85:1 on base, 4.63:1 on card), so
+ * it works as text *and* as a button surface with the existing dark
+ * --oh-accent-foreground (4.85:1). Warning keeps the original amber so it stays
+ * semantically distinct from the brand accent.
+ */
+const QISHENG_BRAND_TOKENS: Record<
+  (typeof COLOR_THEME_TOKEN_KEYS)[number],
+  string
+> = {
+  "--oh-color-primary": "#3B82F6",
+  "--oh-accent": "#3B82F6",
+  "--oh-warning": "#c9b974",
+};
+
 export const COLOR_THEMES: Record<ColorThemeKey, ColorThemeDefinition> = {
+  qisheng: {
+    label: "启声",
+    scale: QISHENG_SCALE,
+    heroui: QISHENG_HEROUI,
+    tokens: QISHENG_BRAND_TOKENS,
+  },
+
   "openhands-deepsea": {
     label: "OpenHands-DeepSea",
     // Matches the values already set by index.css; included so switching back
@@ -162,6 +275,7 @@ export const COLOR_THEMES: Record<ColorThemeKey, ColorThemeDefinition> = {
       "--heroui-default-foreground": "216 45.45% 97.84%",
       "--heroui-default": "222.5 17.65% 26.67%",
     },
+    tokens: LEGACY_GOLD_BRAND_TOKENS,
   },
 
   "openhands-neutral": {
@@ -172,6 +286,7 @@ export const COLOR_THEMES: Record<ColorThemeKey, ColorThemeDefinition> = {
     //   heroui-default-200 ← cool-grey-925 position ← neutral-900 (#202020)
     //   ...etc.
     heroui: NEUTRAL_HEROUI,
+    tokens: LEGACY_GOLD_BRAND_TOKENS,
   },
 
   "openhands-neo": {
@@ -182,7 +297,7 @@ export const COLOR_THEMES: Record<ColorThemeKey, ColorThemeDefinition> = {
   },
 };
 
-export const DEFAULT_COLOR_THEME: ColorThemeKey = "openhands-neutral";
+export const DEFAULT_COLOR_THEME: ColorThemeKey = "qisheng";
 
 export const AVAILABLE_COLOR_THEMES = Object.entries(COLOR_THEMES).map(
   ([key, def]) => ({ key: key as ColorThemeKey, label: def.label }),
