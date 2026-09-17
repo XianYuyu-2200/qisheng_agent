@@ -57,7 +57,7 @@ const isBackendOnly = args.includes("--backend-only");
 
 if (args.includes("-h") || args.includes("--help")) {
   console.log(`
-@openhands/agent-canvas - Run the Agent Canvas UI with agent-server
+@openhands/agent-canvas - Run the 启声 UI with agent-server
 
 Runs the full stack with agent-server and automation backend via uvx,
 and serves pre-built static frontend assets.
@@ -159,7 +159,7 @@ try {
 }
 
 main({
-  bannerTitle: "Agent Canvas",
+  bannerTitle: "启声",
   staticMode: true,
   staticDir: BUILD_DIR,
   mode: "agent-canvas",

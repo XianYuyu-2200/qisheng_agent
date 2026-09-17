@@ -390,7 +390,7 @@ async function launchCloudChild(
   const backend = pickCloudBackendForLaunch();
   if (!backend) {
     return failure(
-      "No OpenHands Cloud backend is connected in Agent Canvas.",
+      "No OpenHands Cloud backend is connected in 启声.",
       'Ask the user to connect OpenHands Cloud from the backend picker, then call this tool again — or relaunch now with target="local".',
     );
   }

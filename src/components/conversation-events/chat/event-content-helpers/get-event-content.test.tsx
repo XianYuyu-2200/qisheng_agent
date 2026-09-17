@@ -978,7 +978,7 @@ describe("client tool observation dispatch", () => {
     mocks.resolveVisualizerBody.mockReturnValue("visualizer details");
     const result = getEventContent(event, action);
     expect(result.details).toBe(
-      "UI command 'open_file' dispatched to the Agent Canvas frontend.",
+      "UI command 'open_file' dispatched to the 启声 frontend.",
     );
     expect(mocks.getObservationContent).not.toHaveBeenCalled();
     expect(mocks.resolveVisualizerBody).not.toHaveBeenCalled();

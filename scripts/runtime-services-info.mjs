@@ -90,7 +90,7 @@ export function buildRuntimeServicesInfo(options) {
   const services = {
     agent_server: {
       description:
-        "The OpenHands Agent Server this agent is running inside. " +
+        "The 启声 Agent Server this agent is running inside. " +
         "Tool calls (terminal, file_editor, browser, etc.) execute here.",
       url_from_agent: agentServerUrlResolved,
     },
@@ -111,8 +111,8 @@ export function buildRuntimeServicesInfo(options) {
       kind: frontendKind,
       description:
         frontendKind === "static"
-          ? "Static-file server hosting the agent-canvas production build."
-          : "Vite dev server hosting the agent-canvas frontend.",
+          ? "Static-file server hosting the 启声 production build."
+          : "Vite dev server hosting the 启声 frontend.",
       url_from_agent: `http://${agentHostAlias}:${frontendPort}`,
     };
   }
@@ -130,7 +130,7 @@ export function buildRuntimeServicesInfo(options) {
     const authEnvVar = automation.authEnvVar ?? "OPENHANDS_AUTOMATION_API_KEY";
     services.automation = {
       description:
-        "OpenHands Automations service. All routes are mounted under " +
+        "启声 Automations service. All routes are mounted under " +
         `'${apiPrefix}'. Authenticate with header ` +
         `'X-Session-API-Key: $${authEnvVar}'.`,
       url_from_agent: automationBaseUrl,

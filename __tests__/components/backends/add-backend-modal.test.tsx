@@ -413,7 +413,7 @@ describe("AddBackendModal – connection chooser", () => {
     await user.click(screen.getByTestId("add-backend-submit"));
 
     expect(await screen.findByTestId("add-backend-error")).toHaveTextContent(
-      "Agent Canvas requires agent-server 1.28.0 or newer",
+      "启声 requires agent-server 1.28.0 or newer",
     );
     expect(onClose).not.toHaveBeenCalled();
   });

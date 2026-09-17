@@ -156,13 +156,13 @@ describe("agent-server compatibility errors", () => {
 
   it("describes unsupported and unknown versions exactly", () => {
     expect(new AgentServerUnsupportedVersionError("1.27.0").message).toBe(
-      `Agent Canvas requires agent-server ${MINIMUM_COMPATIBLE_AGENT_SERVER_VERSION} or newer; this backend is running 1.27.0. Please upgrade the agent-server backend.`,
+      `启声 requires agent-server ${MINIMUM_COMPATIBLE_AGENT_SERVER_VERSION} or newer; this backend is running 1.27.0. Please upgrade the agent-server backend.`,
     );
     expect(new AgentServerUnknownVersionError(null).message).toBe(
-      `Could not determine this backend's agent-server version. Agent Canvas requires agent-server ${MINIMUM_COMPATIBLE_AGENT_SERVER_VERSION} or newer, but this backend did not return a valid version from /server_info. Restart or rebuild the agent-server backend, then try again.`,
+      `Could not determine this backend's agent-server version. 启声 requires agent-server ${MINIMUM_COMPATIBLE_AGENT_SERVER_VERSION} or newer, but this backend did not return a valid version from /server_info. Restart or rebuild the agent-server backend, then try again.`,
     );
     expect(new AgentServerUnknownVersionError("dev-build").message).toBe(
-      `Could not determine this backend's agent-server version. It reported "dev-build". Agent Canvas requires agent-server ${MINIMUM_COMPATIBLE_AGENT_SERVER_VERSION} or newer, but this backend did not return a valid version from /server_info. Restart or rebuild the agent-server backend, then try again.`,
+      `Could not determine this backend's agent-server version. It reported "dev-build". 启声 requires agent-server ${MINIMUM_COMPATIBLE_AGENT_SERVER_VERSION} or newer, but this backend did not return a valid version from /server_info. Restart or rebuild the agent-server backend, then try again.`,
     );
   });
 

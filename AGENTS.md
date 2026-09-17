@@ -164,7 +164,7 @@ The `runtime_services` value is a JSON object of:
   "mode": "dev:automation",
   "services": {
     "agent_server": {
-      "description": "The OpenHands Agent Server this agent is running inside. ...",
+      "description": "The 启声 Agent Server this agent is running inside. ...",
       "url_from_agent": "http://localhost:18000"
     },
     "ingress": {
@@ -173,11 +173,11 @@ The `runtime_services` value is a JSON object of:
     },
     "frontend": {
       "kind": "vite",
-      "description": "Vite dev server hosting the agent-canvas frontend.",
+      "description": "Vite dev server hosting the 启声 frontend.",
       "url_from_agent": "http://localhost:3001"
     },
     "automation": {
-      "description": "OpenHands Automations service. All routes are mounted under '/api/automation'. Authenticate with header 'X-Session-API-Key: $OPENHANDS_AUTOMATION_API_KEY'.",
+      "description": "启声 Automations service. All routes are mounted under '/api/automation'. Authenticate with header 'X-Session-API-Key: $OPENHANDS_AUTOMATION_API_KEY'.",
       "url_from_agent": "http://localhost:18001",
       "api_prefix": "/api/automation",
       "docs_url": "http://localhost:18001/api/automation/docs",
@@ -194,18 +194,18 @@ All keys under `services` are optional and omitted when the corresponding servic
 
 ```
 <RUNTIME_SERVICES>
-You are running inside an agent-canvas dev stack started in 'dev:automation' mode.
+You are running inside a 启声 dev stack started in 'dev:automation' mode.
 The following services are reachable from your sandbox. URLs are written
 from your point of view (i.e., as you should curl/fetch them).
 
 * Agent Server (you): http://localhost:18000
-    The OpenHands Agent Server this agent is running inside. Tool calls (terminal, file_editor, browser, etc.) execute here.
+    The 启声 Agent Server this agent is running inside. Tool calls (terminal, file_editor, browser, etc.) execute here.
 * Ingress: http://localhost:8000
     Unified entry point. Routes /api/automation/* to the automation backend, /api/* and /sockets to the agent-server, and /* to the frontend.
 * Frontend: http://localhost:3001
-    Vite dev server hosting the agent-canvas frontend.
+    Vite dev server hosting the 启声 frontend.
 * Automation backend: http://localhost:18001
-    OpenHands Automations service. All routes are mounted under '/api/automation'. Authenticate with header 'X-Session-API-Key: $OPENHANDS_AUTOMATION_API_KEY'.
+    启声 Automations service. All routes are mounted under '/api/automation'. Authenticate with header 'X-Session-API-Key: $OPENHANDS_AUTOMATION_API_KEY'.
     Docs:    http://localhost:18001/api/automation/docs
     OpenAPI: http://localhost:18001/api/automation/openapi.json
     Auth:    header 'X-Session-API-Key: $OPENHANDS_AUTOMATION_API_KEY'

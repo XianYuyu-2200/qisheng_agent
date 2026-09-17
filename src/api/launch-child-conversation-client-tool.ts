@@ -26,7 +26,7 @@ Choosing target:
 * target="cloud" — runs on OpenHands Cloud in its own isolated sandbox, from a
   git repository. Use this when the work should not touch the user's machine or
   when it needs a repository that is not checked out locally. Requires the user
-  to have an OpenHands Cloud backend connected in Agent Canvas; if none is
+  to have an OpenHands Cloud backend connected in 启声; if none is
   connected you will be told so and should fall back to target="local".
 
 Writing the task brief:

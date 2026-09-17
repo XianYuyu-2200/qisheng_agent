@@ -112,7 +112,7 @@ vi.mock("#/components/features/settings/agent-canvas-version-tile", () => ({
   } = {}) =>
     hideWhenUpToDate ? (
       <button type="button" data-testid="agent-canvas-version-tile">
-        Agent Canvas version
+        启声 version
       </button>
     ) : null,
 }));

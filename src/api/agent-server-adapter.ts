@@ -252,10 +252,10 @@ export function buildRuntimeServicesSystemSuffix(
   lines.push("<RUNTIME_SERVICES>");
   if (info.mode) {
     lines.push(
-      `You are running inside an agent-canvas dev stack started in '${info.mode}' mode.`,
+      `You are running inside a 启声 dev stack started in '${info.mode}' mode.`,
     );
   } else {
-    lines.push("You are running inside an agent-canvas dev stack.");
+    lines.push("You are running inside a 启声 dev stack.");
   }
   lines.push(
     "The following services are reachable from your sandbox. URLs are written",
@@ -287,7 +287,7 @@ export function buildRuntimeServicesSystemSuffix(
   if (automation?.url_from_agent) {
     lines.push(
       `* Automation backend: ${automation.url_from_agent}`,
-      `    ${automation.description ?? "OpenHands Automations service."}`,
+      `    ${automation.description ?? "启声 Automations service."}`,
     );
     if (automation.docs_url) {
       lines.push(`    Docs:    ${automation.docs_url}`);

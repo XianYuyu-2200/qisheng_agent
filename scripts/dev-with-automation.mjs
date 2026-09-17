@@ -227,7 +227,7 @@ function parseArgs() {
 
 function showHelp() {
   console.log(`
-Agent Canvas + Automation Development Stack
+启声 + Automation Development Stack
 
 Runs agent-canvas with the automation backend (via uvx, no clone needed).
 Uses a standalone ingress proxy to route traffic.
@@ -1297,10 +1297,10 @@ async function seedAutomationSecret(config, options = {}) {
 
 function printBanner(config) {
   const stackName = config.frontendOnly
-    ? "Agent Canvas Frontend Stack"
+    ? "启声 Frontend Stack"
     : config.backendOnly
-      ? "Agent Canvas Backend Stack"
-      : "Agent Canvas + Automation Stack";
+      ? "启声 Backend Stack"
+      : "启声 + Automation Stack";
 
   // padEnd counts invisible ANSI escape bytes as visible characters, so we
   // compute the visible length separately and pad with spaces accordingly.
@@ -1382,7 +1382,7 @@ function printBanner(config) {
 
 async function main(options = {}) {
   const {
-    bannerTitle = "Agent Canvas + Automation Development Stack",
+    bannerTitle = "启声 + Automation Development Stack",
     startAgentServer: startAgentServerOverride,
     extraPrereqs,
     viteWorkingDir,
