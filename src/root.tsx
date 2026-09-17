@@ -222,7 +222,7 @@ export const links: LinksFunction = () => [
 ];
 
 export const meta: MetaFunction = () => [
-  { title: "OpenHands" },
+  { title: "启声" },
   { name: "description", content: "Let's Start Building!" },
 ];
 
